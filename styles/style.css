@@ -190,6 +190,8 @@ nav ul li a.active {
 
 .hero-image {
     flex: 1;
+    height: 10px;
+    radius: 5px;
 }
 
 .hero h1 {
@@ -1055,4 +1057,5 @@ footer {
     .filter-buttons {
         justify-content: flex-start;
     }
+
 }
