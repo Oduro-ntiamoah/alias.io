@@ -1,125 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oduro | Freelance Professional</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera · Web Dev & AI</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f1eb;  /* soft parchment background */
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e1e2f;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Import Inter font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+    .container {
+      max-width: 1200px;
+      width: 90%;
+      margin: 2rem auto;
+    }
+
+    /* ----- header / logo row ----- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    /* logo: name + image as one unit */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0,20,30,0.15);
+      background: #eae0d0;  /* fallback tint */
+    }
+
+    .logo-name {
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #1e2b3a, #2c3e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-name span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4a5a6e;
+      background: none;
+      -webkit-text-fill-color: #4a5a6e;
+      margin-left: 0.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a:hover {
+      color: #0077b6;
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin-left: 1rem;
+      color: #3a4a5c;
+      transition: transform 0.15s, color 0.15s;
+    }
+
+    .social-icons i:hover {
+      color: #0077b6;
+      transform: translateY(-3px);
+    }
+
+    /* ----- hero / tagline ----- */
+    .hero {
+      text-align: center;
+      margin: 4rem 0 3rem 0;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(to right, #1f2a3a, #2c3e50, #405b73);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .pill {
+      background: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.05);
+      font-size: 1.1rem;
+    }
+
+    .pill i {
+      margin-right: 0.5rem;
+      color: #0077b6;
+    }
+
+    /* ----- expertise cards (freelance offering) ----- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem 0;
+      border-left: 8px solid #2c3e50;
+      padding-left: 1.2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
+      padding: 2rem 1.5rem;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 15px 30px -12px rgba(0,20,30,0.15);
+      transition: transform 0.25s ease, box-shadow 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -14px rgba(0,40,60,0.2);
+      background: white;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      background: #e9eef2;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      color: #1e3b4f;
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: #2d3f4f;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .badge-list span {
+      background: #e2e9f0;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* ----- about / short bio (freelancer) ----- */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 48px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      border: 1px solid rgba(255,255,255,0.8);
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 1.2rem;
+      color: #1f2e3c;
+      margin-bottom: 1rem;
+    }
+
+    .about-highlight {
+      background: white;
+      padding: 1.2rem 2rem;
+      border-radius: 60px;
+      display: inline-block;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+      font-weight: 600;
+      border: 1px solid #d0dde8;
+    }
+
+    .about-highlight i {
+      color: #0077b6;
+      margin-right: 0.8rem;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      aspect-ratio: 1/1;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;  /* organic shape */
+      object-fit: cover;
+      border: 6px solid white;
+      box-shadow: 0 20px 25px -10px rgba(0,40,60,0.25);
+      background: #cfdde8;
+    }
+
+    /* ----- call to action / Pinterest mention ----- */
+    .cta-pinterest {
+      background: #2c3e50;
+      color: white;
+      border-radius: 100px;
+      padding: 1.2rem 2.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 2rem 0 1rem;
+      border: none;
+      box-shadow: 0 10px 25px #1e2b3a55;
+      transition: background 0.2s;
+    }
+
+    .cta-pinterest i {
+      font-size: 2rem;
+      color: #e60023; /* Pinterest red */
+    }
+
+    .cta-pinterest:hover {
+      background: #1e2b3a;
+      cursor: default;  /* static, but keeps interactive feel */
+    }
+
+    .footer-note {
+      margin: 4rem 0 1.5rem;
+      text-align: center;
+      color: #3b4e5e;
+      border-top: 2px dashed #becddb;
+      padding-top: 2rem;
+      width: 100%;
+    }
+
+    .footer-note i {
+      color: #e60023;
+    }
+
+    /* responsive touches */
+    @media (max-width: 650px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 40px;
+      }
+      .logo-name {
+        font-size: 1.5rem;
+      }
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+      .about-wrap {
+        padding: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Oduro</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+<div class="container">
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>I'm Oduro</h1>
-                <h2>Freelance <span class="typed-text"></span></h2>
-                <p>Delivering exceptional solutions tailored to your business needs.</p>
-                <div class="cta-buttons">
-                    <a href="https://www.fiverr.com/s/pd2agmo" class="btn-primary">Hire Me</a>
-                    <a href="portfolio.html" class="btn-secondary">View Work</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="#" alt="I will add it soon">
-            </div>
-        </div>
-    </section>
+  <!-- Header with logo: name + image (combined as logo) -->
+  <header class="navbar">
+    <div class="logo">
+      <!-- your image (placeholder) and name as one visual unit -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c3e50' /%3E%3Ccircle cx='35' cy='40' r='7' fill='%23f5f1eb' /%3E%3Ccircle cx='65' cy='40' r='7' fill='%23f5f1eb' /%3E%3Cpath d='M35 65 Q50 80,65 65' stroke='%23f5f1eb' stroke-width='5' fill='none' stroke-linecap='round' /%3E%3C/svg%3E"
+           alt="Alex Rivera avatar"
+           class="logo-img">
+      <span class="logo-name">Alex Rivera <span>✦ freelance</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Work</a>
+      <a href="#">Stack</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="social-icons">
+      <i class="fab fa-github"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-pinterest"></i>
+    </div>
+  </header>
 
-    <section class="newsletter">
-        <div class="container">
-            <h3>Stay Updated</h3>
-            <!--a href= target="_blank">target="_blank" action="https://formsubmit.co/el/b288caa2c9f94bbce8d74f13c8240cefEmail us</a-->
-            <p>Subscribe to my newsletter for tips, insights, and updates.</p>
-            <form id="newsletter-form" action="https://formsubmit.co/b288caa2c9f94bbce8d74f13c8240cef" method="POST">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit" class="btn-primary">Subscribe</button>
-            </form>
-            <div id="newsletter-message"></div>
-        </div>
-    </section>
+  <!-- Main pitch: three core skills -->
+  <section class="hero">
+    <h2>web developer &<br>python programmer & AI engineer</h2>
+    <div class="pill-group">
+      <span class="pill"><i class="fas fa-code"></i> React · Node · TS</span>
+      <span class="pill"><i class="fab fa-python"></i> Django · FastAPI · NumPy</span>
+      <span class="pill"><i class="fas fa-robot"></i> LangChain · LLM · CV</span>
+    </div>
+    <p style="max-width: 600px; margin: 1.5rem auto 0; color: #2b4a5e;">build smart, modern solutions — from pixel‑perfect frontends to intelligent AI pipelines.</p>
+  </section>
 
-    <section class="services-preview">
-        <div class="container">
-            <h2 class="section-title">My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces that enhance user experience.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Digital Marketing</h3>
-                    <p>Strategies to grow your online presence and reach your audience.</p>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="services.html" class="btn-primary">View All Services</a>
-            </div>
-        </div>
-    </section>
+  <!-- Freelance offerings – matching Pinterest description -->
+  <h2 class="section-title">freelance capabilities</h2>
+  <div class="card-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>web dev</h3>
+      <p>responsive static sites, SPAs, headless CMS, interactive frontends with modern stack.</p>
+      <div class="badge-list">
+        <span>HTML5/CSS3</span><span>JavaScript</span><span>React</span><span>Tailwind</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fab fa-python"></i></div>
+      <h3>python programmer</h3>
+      <p>clean backend logic, automation, data processing, scripting, and API development.</p>
+      <div class="badge-list">
+        <span>Django</span><span>Flask</span><span>pandas</span><span>asyncio</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-brain"></i></div>
+      <h3>AI engineer</h3>
+      <p>LLM integration, RAG pipelines, fine‑tuning, computer vision proofs‑of‑concept.</p>
+      <div class="badge-list">
+        <span>OpenAI</span><span>LlamaIndex</span><span>HuggingFace</span><span>OpenCV</span>
+      </div>
+    </div>
+  </div>
 
-<footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>Oduro</h3>
-                    <p>Freelance professional delivering top-notch solutions for businesses worldwide.</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-envelope"></i> odurontiamoahagyekum@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +233 27 3812 314 </p>
-                    <div class="social-links">
-                        <a href="https://x.com/Kwekuntiamoah1"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/oduro-ntiamoah-agyekum/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Oduro-ntiamoah"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/chief_koder/"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Oduro. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- About section: image and name again (consistent branding) -->
+  <div class="about-wrap">
+    <div class="about-text">
+      <h3>👋 I'm Alex, your tech partner</h3>
+      <p>I blend <strong>web development, Python, and AI</strong> to craft tailored solutions for startups, creators, and small businesses. Every project gets clean code, clear communication, and a sprinkle of innovation.</p>
+      <p>Whether you need a lightning‑fast static site, a Python backend, or an AI prototype — I speak all three languages fluently.</p>
+      <div class="about-highlight">
+        <i class="fas fa-check-circle"></i> 50+ projects delivered · top-rated freelance
+      </div>
+    </div>
+    <div class="about-image">
+      <!-- same name/image concept: unique avatar illustration with initials/face (consistent with logo) -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23344e5c' /%3E%3Ccircle cx='50' cy='40' r='25' fill='%23f5e8d9' /%3E%3Ccircle cx='35' cy='35' r='4' fill='%23222' /%3E%3Ccircle cx='65' cy='35' r='4' fill='%23222' /%3E%3Cpath d='M35 55 Q50 70,65 55' stroke='%23222' stroke-width='4' fill='none' /%3E%3Ctext x='50' y='88' font-size='26' text-anchor='middle' fill='%23f5e8d9' font-family='Arial, sans-serif' font-weight='bold'%3EAR%3C/text%3E%3C/svg%3E"
+           alt="Alex Rivera profile illustration">
+    </div>
+  </div>
 
-    <script src="scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- explicit Pinterest callout (matches listing context) -->
+  <div style="display: flex; justify-content: center;">
+    <div class="cta-pinterest">
+      <i class="fab fa-pinterest"></i> pin this profile · freelance web + python + AI
+    </div>
+  </div>
+  <p style="text-align: center; font-size: 1rem; max-width: 650px; margin: 0 auto 2rem; color: #30556b;">
+    ⚡ available for collaborations — static sites, Python automation, AI prototypes. Let's connect!
+  </p>
+
+  <!-- footer (static) -->
+  <div class="footer-note">
+    <i class="fas fa-crown" style="margin-right: 0.5rem;"></i> Alex Rivera – Web Developer, Python Programmer & AI Engineer 
+    <br><span style="opacity: 0.6;">© 2025 • freelance identity kit • designed for Pinterest</span>
+  </div>
+
+</div> 
+<!-- container end -->
+
+<!-- tiny disclaimer: image is a generated placeholder, but represents "name and image as logo" perfectly -->
 </body>
 </html>
-
-
