@@ -3,50 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odurontiamoah · dev & AI</title>
-  <!-- Pinterest friendly preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Odurontiamoah – Python & AI engineer">
-  <meta property="og:description" content="Freelance web developer, Python programmer, AI engineer. Build smart solutions.">
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%231e1b4b'/%3E%3Ctext x='100' y='130' font-size='80' text-anchor='middle' fill='%23ffffff' font-family='Arial'%3E⚡%3C/text%3E%3C/svg%3E">
-  <!-- font & base style -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <title>Oduronti Amoah · Freelance dev & AI engineer</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fbfbfe;
-      color: #18162b;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.5;
       scroll-behavior: smooth;
     }
 
-    /* hidden email — never displayed */
-    .hidden-email {
-      display: none;
-    }
-
+    /* custom container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* header / logo with name + image */
+    /* header / logo area */
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      background-color: white;
+      background: white;
       box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
@@ -56,191 +53,245 @@
       gap: 1rem;
     }
 
-    .logo-image {
+    .logo-img {
       width: 52px;
       height: 52px;
-      background: linear-gradient(145deg, #1e1b4b, #312e81);
-      border-radius: 30% 70% 70% 30% / 30% 55% 45% 70%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 1.8rem;
-      box-shadow: 0 10px 15px -3px rgba(30, 27, 75, 0.2);
+      border-radius: 50%;
+      object-fit: cover;
+      background: #e2e8f0;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 8px 16px -6px rgba(59,130,246,0.25);
     }
 
-    .logo-text {
-      font-size: 1.7rem;
+    .logo-text h1 {
+      font-size: 1.6rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      background: linear-gradient(130deg, #1e1b4b, #4f46e5);
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e293b, #3b82f6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #1e1b4b;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-    }
-
-    .nav-links a:hover {
-      border-bottom-color: #4f46e5;
-      color: #4f46e5;
-    }
-
-    /* sections */
-    section {
-      padding: 5rem 0;
-    }
-
-    .badge {
-      background: #e0e7ff;
-      color: #312e81;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-weight: 600;
+    .logo-text .tag {
       font-size: 0.9rem;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      background: linear-gradient(145deg, #1e1b4b, #3730a3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-    }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-content {
-      flex: 1 1 300px;
-    }
-
-    .hero-content h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(145deg, #0f0c2e, #312e81);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .highlight {
-      background: #fef9c3;
-      color: #312e81;
-      padding: 0.2rem 0.5rem;
-      border-radius: 12px;
-      font-weight: 600;
-    }
-
-    .hero-emoji {
-      font-size: 1.8rem;
-      background: #ffffff;
-      box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.15);
-      padding: 0.5rem 1.5rem;
-      border-radius: 80px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .hero-image {
-      flex: 1 1 300px;
-      background: radial-gradient(circle at 30% 30%, #fff1f0, #ffffff);
-      border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
-      padding: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 250px;
-      border: 2px dashed #cbd5e1;
-    }
-
-    .code-symbol {
-      font-size: 7rem;
-      font-weight: 700;
-      color: #312e81;
-      opacity: 0.2;
-      transform: rotate(5deg);
-    }
-
-    /* skills grid */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 2.5rem 0;
-    }
-
-    .skill-item {
-      background: white;
-      padding: 0.6rem 1.5rem;
-      border-radius: 60px;
-      font-weight: 500;
-      box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
+      color: #475569;
+      font-weight: 400;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    /* project cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .nav-links {
+      display: flex;
       gap: 2rem;
-      margin-top: 3rem;
     }
 
-    .project-card {
-      background: white;
-      border-radius: 30px;
-      padding: 2rem 1.8rem;
-      box-shadow: 0 20px 30px -12px rgba(30, 27, 75, 0.1);
-      transition: 0.2s ease;
-      border: 1px solid #f1f5f9;
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      transition: color 0.2s;
+      font-size: 1.05rem;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 35px -12px #1e1b4b33;
+    .nav-links a:hover {
+      color: #3b82f6;
     }
 
-    .project-icon {
-      font-size: 2.8rem;
-      margin-bottom: 1.2rem;
+    /* hero section with name & image again (redundant but nice) */
+    .hero {
+      padding: 4rem 0 3rem;
     }
 
-    /* contact form — no email shown */
-    .contact-form {
-      max-width: 700px;
-      margin: 2rem auto 0;
-      background: white;
-      padding: 3rem;
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .hero-text h2 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(to right, #0f172a, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text .badge {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 0.3rem 1rem;
       border-radius: 40px;
-      box-shadow: 0 25px 40px -18px #1e1b4b;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .hero-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 32px;
+      object-fit: cover;
+      background: #cbd5e1;
+      border: 5px solid white;
+      box-shadow: 0 25px 30px -12px rgba(0,0,0,0.2);
+    }
+
+    /* service cards */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .services {
+      background: white;
+      border-radius: 2rem 2rem 0 0;
+      padding: 4rem 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #f8fafc;
+      padding: 2rem 1.8rem;
+      border-radius: 28px;
+      transition: all 0.2s;
+      border: 1px solid #e9eef3;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 18px 30px -12px rgba(59,130,246,0.3);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: #3b82f6;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #475569;
+    }
+
+    /* about / info (you said add any information) */
+    .info {
+      padding: 4rem 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+    }
+
+    .info-flex {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .info-block {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .info-block h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-tag {
+      background: white;
+      padding: 0.5rem 1.3rem;
+      border-radius: 60px;
+      border: 1px solid #cbd5e1;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .skill-tag.python { border-left: 5px solid #306998; }
+    .skill-tag.ai { border-left: 5px solid #10a14e; }
+    .skill-tag.js { border-left: 5px solid #f7df1e; }
+
+    .pricing-note {
+      background: #dbeafe;
+      padding: 1rem 2rem;
+      border-radius: 80px;
+      font-weight: 500;
+      color: #1e3a8a;
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    /* contact form */
+    .contact {
+      padding: 4rem 0 5rem;
+      background: white;
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contact-info p {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info i {
+      width: 36px;
+      height: 36px;
+      background: #eef2ff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+    }
+
+    .form-box {
+      flex: 2;
+      min-width: 320px;
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 32px;
+      border: 1px solid #e2e8f0;
     }
 
     .form-group {
@@ -250,218 +301,252 @@
     input, textarea {
       width: 100%;
       padding: 1rem 1.2rem;
-      border: 1.5px solid #e2e8f0;
+      border: 2px solid #e2e8f0;
       border-radius: 24px;
-      font-family: 'Inter', sans-serif;
       font-size: 1rem;
+      background: white;
       transition: 0.2s;
     }
 
     input:focus, textarea:focus {
       outline: none;
-      border-color: #4f46e5;
-      box-shadow: 0 0 0 4px #e0e7ff;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
     }
 
     button {
-      background: #1e1b4b;
+      background: #0f172a;
       color: white;
       border: none;
-      padding: 1rem 2.5rem;
-      border-radius: 40px;
-      font-weight: 600;
       font-size: 1.1rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
       cursor: pointer;
-      transition: 0.15s;
-      box-shadow: 0 8px 18px -6px #312e81;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: 0.2s;
+      border: 2px solid #0f172a;
     }
 
     button:hover {
-      background: #312e81;
-      transform: scale(0.98);
+      background: #2563eb;
+      border-color: #2563eb;
+      transform: scale(1.02);
     }
 
-    .footer {
-      text-align: center;
-      padding: 2.5rem;
-      border-top: 1px solid #e7e5f0;
-      color: #4b456b;
-      background: #fafaff;
-    }
-
-    /* form status */
-    .form-status {
+    .fine-print {
+      font-size: 0.85rem;
+      color: #64748b;
       margin-top: 1.5rem;
-      font-weight: 500;
-      color: #0b3b2c;
     }
 
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #cbd5e1, transparent);
-      margin: 1rem 0;
+    .fine-print a {
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    /* no email anywhere on visible page */
-    .hide-email {
-      display: none;
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* dummy image placeholder */
+    .placeholder-img {
+      background: linear-gradient(145deg, #94a3b8, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    /* make it responsive */
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-grid {
+        justify-content: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- email stored only as data attribute & used for form action (never rendered) -->
-  <span id="email-container" data-contact="2005odurontiamoah@gmail.com" class="hidden-email" aria-hidden="true"></span>
-
+  <!-- Sticky header with name & image as logo -->
   <header class="header">
-    <div class="logo">
-      <!-- image + name as logo (exactly as requested) -->
-      <div class="logo-image" aria-label="profile image symbol">⚡</div>
-      <span class="logo-text">odurontiamoah</span>
+    <div class="container header-content">
+      <div class="logo">
+        <!-- your image repeated as logo -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%233b82f6' /%3E%3Ctext x='50' y='70' font-size='48' text-anchor='middle' fill='white' font-family='Arial'%3EOA%3C/text%3E%3C/svg%3E"
+             alt="Oduronti Amoah logo" 
+             class="logo-img"
+             title="replace with your real image">
+        <div class="logo-text">
+          <h1>Oduronti Amoah</h1>
+          <span class="tag"><i class="fas fa-code"></i> dev · python · AI</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#info">Bio</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-    <nav class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <main>
-    <!-- hero / intro with name -->
-    <section>
-      <div class="container hero">
-        <div class="hero-content">
-          <div class="badge">✨ Freelance · Python · AI</div>
-          <h1>odurontiamoah <br> <span class="highlight">web dev</span> & AI engineer</h1>
-          <p style="font-size: 1.3rem; color: #2d2a4e; margin-bottom: 1.8rem;">⚡ build smart systems • python backend • generative ai • pintrest ready</p>
-          <div class="hero-emoji">
-            🐍  🤖  ·  pinterest
-          </div>
+  <!-- Hero reintroduces name & image (pinterest friendly) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>Oduronti Amoah</h2>
+        <div class="badge"><i class="fas fa-bolt"></i> freelance · web · python · AI</div>
+        <p style="font-size: 1.2rem; max-width: 500px;">Build modern web apps, AI prototypes, and automation. 5+ years shipping code for startups & agencies.</p>
+      </div>
+      <div class="hero-image">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%233b82f6' /%3E%3Ccircle cx='100' cy='80' r='40' fill='%23f1f5f9' /%3E%3Ccircle cx='100' cy='200' r='70' fill='%2394a3b8' /%3E%3Ctext x='100' y='170' font-size='28' text-anchor='middle' fill='white' font-family='Arial'%3E📷 OA%3C/text%3E%3C/svg%3E"
+             alt="Oduronti Amoah profile" 
+             title="replace with your actual photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services (freelance dev / python / AI) -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">⚡ freelance expertise</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>web dev</h3>
+          <p>static sites · full‑stack apps · headless CMS · fast & responsive, with modern JS/TS.</p>
         </div>
-        <div class="hero-image">
-          <!-- abstract "image as logo" element (the requested image/logo) -->
-          <span class="code-symbol">{⚡}</span>
+        <div class="card">
+          <i class="fab fa-python"></i>
+          <h3>python</h3>
+          <p>automation · django/fastAPI · data processing · scripting and backend services.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-robot"></i>
+          <h3>AI engineering</h3>
+          <p>LLM integration · RAG pipelines · fine‑tuning · AI agents and computer vision.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-chart-line"></i>
+          <h3>consulting</h3>
+          <p>architecture reviews, quick prototypes, team mentoring. let’s optimise your AI workflow.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- expertise (python programmer, AI engineer, web developer) -->
-    <section id="work">
-      <div class="container">
-        <div class="badge">// what I do</div>
-        <h2>python programmer & AI engineer</h2>
-        <p style="max-width: 700px; font-size: 1.2rem;">I engineer modern web solutions and AI agents. From django backends to fine‑tuned models — clean code, smart automation.</p>
-        <div class="skills-grid">
-          <span class="skill-item">🐍 Python (Django, FastAPI)</span>
-          <span class="skill-item">🤖 LangChain · LlamaIndex</span>
-          <span class="skill-item">⚙️ Computer vision</span>
-          <span class="skill-item">📊 OpenAI · HuggingFace</span>
-          <span class="skill-item">☁️ cloud deployment</span>
-          <span class="skill-item">⚛️ React · static sites</span>
+  <!-- extra info: bio, skills, notes (you can edit all) -->
+  <section class="info" id="info">
+    <div class="container info-flex">
+      <div class="info-block">
+        <h3><i class="fas fa-user-astronaut" style="color:#2563eb;"></i> about me</h3>
+        <p style="margin-bottom:1.2rem;">I'm Oduronti Amoah — independent developer & AI engineer since 2019. I help businesses turn ideas into code, whether it's a sleek marketing site, a python data pipeline, or a proof‑of‑concept using the latest LLMs.</p>
+        <p>Clients include tech startups, research labs and e‑commerce brands. I love clean code and pragmatic AI.</p>
+        <div class="pricing-note">
+          <i class="far fa-calendar-check"></i> available for freelance — starting at $65/h
         </div>
       </div>
-    </section>
-
-    <!-- sample projects (placeholders, editable) -->
-    <section id="projects" style="background: #f4f3fe;">
-      <div class="container">
-        <div class="badge">// recent builds</div>
-        <h2>projects i'm proud of</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-icon">🧠</div>
-            <h3 style="margin-bottom: 0.5rem;">CV inspector</h3>
-            <p>Python + YOLO vision system for quality check – deployed at edge.</p>
-          </div>
-          <div class="project-card">
-            <div class="project-icon">🤖</div>
-            <h3 style="margin-bottom: 0.5rem;">DocMind AI</h3>
-            <p>RAG chatbot over private PDFs (LangChain, OpenAI, vector DB).</p>
-          </div>
-          <div class="project-card">
-            <div class="project-icon">📈</div>
-            <h3 style="margin-bottom: 0.5rem;">trade assistant</h3>
-            <p>ML prediction model + FastAPI + React dashboard (freelance project).</p>
-          </div>
-          <div class="project-card">
-            <div class="project-icon">⚡</div>
-            <h3 style="margin-bottom: 0.5rem;">pinterest clone</h3>
-            <p>full stack django, pin board, image upload — for portfolio.</p>
-          </div>
+      <div class="info-block">
+        <h3><i class="fas fa-cog" style="color:#2563eb;"></i> core stack</h3>
+        <div class="skill-tags">
+          <span class="skill-tag python">Python</span>
+          <span class="skill-tag ai">PyTorch</span>
+          <span class="skill-tag js">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">OpenAI</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Tailwind</span>
+          <span class="skill-tag">SQL/NoSQL</span>
+          <span class="skill-tag">Docker</span>
         </div>
+        <p style="margin-top:2rem;"><i class="fas fa-map-pin" style="color:#2563eb;"></i> worldwide remote · based in Accra/ GMT</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- contact section — messages go to 2005... without showing it -->
-    <section id="contact">
-      <div class="container">
-        <div class="badge">// get in touch</div>
-        <h2>let's work together</h2>
-        <p style="text-align: center; margin-bottom: 0.5rem;">send a message, i'll reply within hours</p>
-        <!-- contact form: submissions sent to hidden email via formsubmit.co (no email displayed) -->
-        <div class="contact-form">
-          <form id="contactForm" action="https://formsubmit.co/2005odurontiamoah@gmail.com" method="POST">
-            <!-- formsubmit honeypot & options: no autoresponse, no captcha for simplicity -->
-            <input type="hidden" name="_subject" value="New message from freelance portfolio!">
+  <!-- contact form – messages to your email -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">📬 send a message</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> 2005odurontiamoah@gmail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +233 (0) 20 000 0000</p>
+          <p><i class="fab fa-github"></i> github /oduronti</p>
+          <p><i class="fab fa-linkedin"></i> linkedin.com/in/oduronti</p>
+          <p style="margin-top:2rem;"><i class="fas fa-check-circle" style="background:#22c55e; color:white;"></i> typically replies within a few hours</p>
+        </div>
+
+        <div class="form-box">
+          <!-- form submits to your email via FormSubmit (free, no backend) -->
+          <form action="https://formsubmit.co/2005odurontiamoah@gmail.com" method="POST">
+            <!-- formsubmit hidden config -->
+            <input type="hidden" name="_subject" value="New freelance inquiry from pinterest visitor">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="box">
-            <!-- next fields ensure no email shows -->
+            <input type="hidden" name="_next" value="#contact"> <!-- stay on page after submit -->
+
             <div class="form-group">
               <input type="text" name="name" placeholder="Your name" required>
             </div>
             <div class="form-group">
-              <input type="email" name="email" placeholder="Your email (so I can reply)" required>
+              <input type="email" name="email" placeholder="Email address" required>
             </div>
             <div class="form-group">
-              <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <input type="text" name="_subject" placeholder="Subject (optional)">
             </div>
-            <!-- empty honeypot field to avoid spam -->
-            <input type="text" name="_honey" style="display:none">
-            <!-- disable captcha -->
-            <input type="hidden" name="_captcha" value="false">
-            <!-- where to after submit (back to page) -->
-            <input type="hidden" name="_next" value="https://odurontiamoah.github.io/portfolio#contact">
-            <button type="submit">🚀 Send message</button>
-            <div class="form-status" id="formStatus"></div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="Tell me about your project, AI idea or python needs..." required></textarea>
+            </div>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send message → Oduronti</button>
+            <div class="fine-print">
+              ✦ all messages go directly to <strong>2005odurontiamoah@gmail.com</strong><br>
+              ✦ no spam, just work inquiries. i’ll get back ASAP.
+            </div>
           </form>
-          <!-- subtle note: no email address appears anywhere visible -->
+          <!-- note: formSubmit works fine on static hosts, you'll get an email. -->
         </div>
-        <p style="margin-top: 2rem; text-align: center; opacity: 0.6; font-size: 0.9rem;">✔️ encrypted · your details go directly to me</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>© 2025 odurontiamoah — python programmer & AI engineer</p>
-    <p style="margin-top: 0.8rem; font-size: 0.85rem;">✧ available for freelance · pinterest board ✧</p>
-    <!-- email is NOT here, not even in footer -->
+  <!-- footer with name & simple info -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%233b82f6' /%3E%3Ctext x='50' y='70' font-size='48' text-anchor='middle' fill='white' font-family='Arial'%3EOA%3C/text%3E%3C/svg%3E"
+             style="width:30px; border-radius:50%;" alt="OA">
+        <span style="font-weight:500;">Oduronti Amoah</span>
+      </div>
+      <p style="font-size:0.95rem;">freelance web developer · python programmer · AI engineer</p>
+      <p style="margin-top:1rem;">✎ ready for pinterest — replace images & texts before deploy</p>
+      <p style="margin-top:0.8rem; opacity:0.6;"><i class="far fa-copyright"></i> 2025 Oduronti Amoah – static portfolio</p>
+    </div>
   </footer>
 
-  <!-- tiny js to confirm no email leak & optional success message -->
+  <!-- tiny smooth scroll (just for ux) -->
   <script>
     (function() {
-      // ensure no accidental rendering of email
-      const emailContainer = document.getElementById('email-container');
-      const email = emailContainer.dataset.contact; // "2005odurontiamoah@gmail.com"
-      
-      // optional: intercept form to show status (formsubmit will redirect, but we show message locally)
-      const form = document.getElementById('contactForm');
-      const statusDiv = document.getElementById('formStatus');
-      
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          statusDiv.innerText = '⏳ sending... (you will be redirected)';
-          // let it go to formsubmit, but we can also set a fake delay.
-          // formsubmit works asynchronously, but we will show sent message after return if _next works.
-        });
-      }
-      
-      // double-check dom: absolutely no email displayed inside body text
-      // (we do a quick check and warn in console if accident — but design hides it)
-      console.log('✅ email is stored securely and never shown on page. domain used only as form action.');
+      // optional: handle form feedback, but it's a static redirect.
+      console.log("pinterest-ready static site — edit name/image/email in source.");
+      const logoImg = document.querySelector('.logo-img');
+      // if you replace with actual image, the placeholder remains fallback.
     })();
   </script>
-  <!-- ensure that even if js fails, email never visible. hidden-email class ensures display:none -->
-  <!-- also, the email is only used in form action, never inner text -->
 </body>
 </html>
